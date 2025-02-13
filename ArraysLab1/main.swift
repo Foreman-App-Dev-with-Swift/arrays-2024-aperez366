@@ -104,15 +104,16 @@ There are lots of ways to manipulate arrays using methods and index calling, the
 
 print("***PROBLEM 1.0 : BASIC ARRAY CREATION")
 //  Assume you are an event coordinator for a community charity event and are keeping a list of who has registered. Create a variable registrationList that will hold strings. It should be empty after initialization. Print the empty list and observe the output in the console. Hint: line 20
- 
+var registrationList: [String] = [ ]
+print(registrationList)
 
  print("\n")
 
 print("***PROBLEM 1.1 : BASIC ARRAY ADDITION")
 // Your friend Sara is the first to register for the event. Add her name to registrationList using the append(_:) method. Print the contents of the collection.
 //Hint: See lines 35 & 48
- 
-
+registrationList.append("Sara")
+print(registrationList)
  
 print("\n")
 
@@ -122,7 +123,9 @@ print("***PROBLEM 1.2 : MORE ARRAY ADDITIONS")
 //This is how you do this: 1. Create a new array called moreNames and fill it with four new names.
 // 2. Then add that new array to your original array. Yes ADD.
 //How? To add in multiple names in one step use the += operator we will need to have the names in a separate array that contains the names. Then print your registrationList and observe the output in the console.
-
+var moreNames: [String] = ["Mike", "Charles" , "Jack" , "Finn"]
+registrationList += moreNames
+print(registrationList)
 
  print("\n")
  
@@ -132,14 +135,14 @@ print("***PROBLEM 1.3 : ARRAY INSERTION")
  //Hint: see line 78
 //print the registration list and observe the output making sure it is correct.
 
-
-
+registrationList.insert("Charlie", at: 1)
+print(registrationList)
  print("\n")
  
 print("***Example for 1.4")
 //You can identify a particular portion of an array by adding the element number with name of the array. This is called subscripting.
-registrationList[1] = "Charlie1"
-print(registrationList)
+////registrationList[1] = "Charlie1"
+//print(registrationList)
 
 print("\n")
 
@@ -148,7 +151,8 @@ print("***PROBLEM 1.4 : ARRAY MODIFICATION")
  //See the example above and remember the sixth element is the fifth index.
 // registrationList[1] = "Charlie1"
 // print(registrationList)
-
+registrationList[5] = "Rebecca"
+print(registrationList)
 
  print("\n")
  
@@ -156,8 +160,10 @@ print("***PROBLEM 1.4 : ARRAY MODIFICATION")
 print("***PROBLEM 1.5 : ARRAY REMOVAL")
 // Call removeLast() on registrationList. Store the result of removeLast() into a new constant deletedItem. If done correctly, this should remove Rebecca from the collection. print the registrationList, then print deletedItem.
 //Observe the output in the console and make sure it is correct.
-
- 
+registrationList.removeLast()
+let deletedItem = ("Rebecca")
+ print(registrationList)
+print(deletedItem)
 print("\n")
 
 print("***PROBLEM 2.0 : FITNESS TRACKING")
@@ -167,16 +173,19 @@ print("***PROBLEM 2.0 : FITNESS TRACKING")
  Using arrays of type String, create at least THREE lists (arrays), one for walking challenges, and one for running challenges, and one for lifting challenges - in that order. Each should have at least THREE challenges or how many times a week it's done and should be initialized using an array. Feel free to create more lists for different activities.
  */
 //Print all three of the arrays to make sure it outputs in the console.
-
-
-
+var walking: [String] = ["Walk 2 miles a day", "Walk 3 miles a day", "Walk 4 miles a day"]
+var running: [String] = ["Run 3 days a week", "Run 1 mile a week", "Run 5 days a week"]
+var lifting: [String] = ["lift 30 mins a day" , "lift 20 mins a day", "lift 10 mins a day"]
+print(walking)
+print(running)
+print(lifting)
 
 print("\n")
 
 print("PROBLEM 2.1 : FITNESS TRACKING")
 // In your app you want to show all of these lists on the same screen grouped into sections. Create a challenges array that holds (assigned the value) each of the lists you have created (it will be an array of arrays). Using the new challenges array, print the first element. Remember what number the first element it. Hint: it's alway minus 1.
-
-
+var challenges = [ walking, running, lifting]
+print(challenges)
 
 print("\n")
 print("***PROBLEM 2.2 : PRINTING FITNESS TRACKING")
@@ -186,7 +195,7 @@ print("***PROBLEM 2.2 : PRINTING FITNESS TRACKING")
 //Confused? You are using a double index [] [] which is calling a list in a list.
 //Print it. The console should say what you coded the second challenge in the second list. If not, figure it out.
 
- 
+ print(challenges[1][0])
  
  
  
@@ -194,16 +203,16 @@ print("***PROBLEM 2.2 : PRINTING FITNESS TRACKING")
 print("***PROBLEM 2.3 : REMOVING CHALLENGES")
 // All of the challenges will reset at the end of the month. Use the removeAll to remove everything from challenges. Print challenges.
 
+challenges.removeAll()
  
- 
- 
+ print(challenges)
  print("\n")
  
  
  print("PROBLEM 2.4 : FITNESS COMMITMENTS")
 // Create a new array of type String that will represent challenges a user has committed to instead of available challenges. It can be an empty array or have a few items in it. Print it to see if it outputs in the console.
- 
-
+var committedChallenges: [String] = []
+print(committedChallenges)
  
  print("\n")
 
@@ -212,8 +221,12 @@ print("PROBLEM 2.5 : COMBINING IF STATEMENTS AND ARRAYS")
 //Hint: To be clear, you are using committedChallenges.isEmpty first and then committedChallenges.count next.
 //Then test your code by changing the number of challenges in the committedChallenges array above.
 
- 
-
+if committedChallenges.isEmpty {
+    print("Commit to a challenge")
+}
+else if committedChallenges.count {
+    print("The challenge you have chose is")
+}
 
 
 print("\n")
